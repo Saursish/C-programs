@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+int num_article(char* );
+int main()
+{
+	char ch[100];
+	printf("enter a line string\n");
+	gets(ch);
+	int n;
+	n=num_article(ch);
+	printf("the number of article is: %d",n);
+	return 0;
+}
+int num_article(char *str)
+{
+	int i=0,j,n=0;
+	char tr[50];
+  //breaking the line into words
+	while(str[i]!='\0')
+	{
+		while(str[i]!='\0')
+		{
+			tr[j]=str[i];
+			j++;
+			i++;
+			if(str[i]==' ')         
+			{
+				tr[j]='\0';
+				i++;
+				j=0;
+				break;
+			}
+		}
+		if (strcmp(tr,"a")==0||strcmp(tr,"an")==0||strcmp(tr,"the")==0||strcmp(tr,"A")==0||strcmp(tr,"An")==0||strcmp(tr,"The")==0)
+		{
+			n++;
+		}
+	}
+	return n;
+}
