@@ -1,0 +1,49 @@
+#include<stdio.h>
+void roman(int );
+int main()
+{
+	int n;
+	printf("enter a number ");
+	scanf("%d",&n);
+	roman(n);
+	return 0;
+}
+void roman(int n)
+{
+	printf("the roman equivalent is ");
+	while(n>=1000)
+	{
+		printf("m");
+		n=n-1000;
+	}
+	while(n>=500)
+	{
+		printf("d");
+		n=n-500;
+	}
+	while(n>=100)
+	{
+		printf("c");
+		n=n-100;
+	}
+	while(n>=50)
+	{
+		printf("l");
+		n=n-50;
+	}
+	while(n>=10)
+	{
+		printf("x");
+		n=n-10;
+	}
+	while(n>=5)
+	{
+		printf("v");
+		n=n-5;
+	}
+	while(n>=1)
+	{
+		printf("i");
+		n=n-1;
+	}
+}
