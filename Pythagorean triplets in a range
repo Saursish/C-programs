@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a,b,c,n;
+	printf("enter the last range ");
+	scanf("%d",&n);
+	for(a=1;a<=n;a++)
+	{
+		for(b=a;b<=n;b++)
+		{
+			c = a*a +b*b;
+			 if(sqrt(c)==(int)sqrt(c))
+			 {
+			 	c= sqrt(c);
+			 	printf("%d %d %d\n",a,b,c);
+			 	
+			 }
+		}
+	}
+	return 0; 
+}
