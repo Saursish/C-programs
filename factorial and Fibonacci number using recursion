@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+void fibbo(int ,int ,int );
+int gcd(int ,int );
+long long int fact(int );
+int sum(int n,int *a);
+int main()
+{
+	int k,n,l,c1,*p,x,y;
+	int a=0,b=1;
+	long long int c2;
+	printf("enter 1 for fibbonacci series\nenter 2 for factorial\n");
+	do
+	{
+		scanf("%d",&k);
+		switch(k)
+		{
+			case 1:
+				printf("enter the number of sequence element: ");
+				scanf("%d",&n);
+				printf("%d %d ",a,b);
+				fibbo(n-2,a,b);
+				break;
+			case 2:
+				printf("enter a number: ");
+				scanf("%d",&n);
+				c2=fact(n);
+				printf("the factorial is %lld",c2);
+				break;
+		}
+		printf("\nenter 0 to run againg and enter 1 to stop. ");
+		scanf("%d",&l);
+	}while(l==0);
+}
+long long int fact(int n)
+{
+	long long int c;
+	if(n==1)
+	{
+		return 1;
+	}
+	c=n*fact(n-1);
+	return c;
+}
+void fibbo(int n,int a,int b)
+{
+	int c;
+	if(n<=0)
+	return;
+	c=a+b;
+	a=b;
+	b=c;
+	printf("%d ",c);
+	n--;
+	fibbo(n,a,b);
+}
+
